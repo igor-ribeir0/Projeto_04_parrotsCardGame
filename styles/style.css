@@ -1,0 +1,12 @@
+.containerGlobal{
+    height: 100vh;
+}
+
+.imagemBackGround{
+    width: 100vw;
+    height: 100vh;
+}
+
+.imagemMobile{
+    display: none;
+}

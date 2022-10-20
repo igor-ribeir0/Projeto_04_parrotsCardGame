@@ -1,9 +1,0 @@
-@media (max-width: 767px){
-    .imagemDesktop{
-        display: none;
-    }
-
-    .imagemMobile{
-        display: flex;
-    }
-}

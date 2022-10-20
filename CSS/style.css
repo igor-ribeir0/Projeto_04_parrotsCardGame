@@ -1,0 +1,66 @@
+*{
+    box-sizing: border-box;
+}
+.containerGlobal{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerCartas{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.containerCaixa{
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.caixaCarta{
+    width: 7.6171875vw;
+    aspect-ratio: 3/4;
+    border-radius: 5px;
+    position: relative;
+    margin: 20px;
+}
+
+.caixaCarta:hover{
+    cursor: pointer;
+    transform: rotateY(180deg);
+    transition: all 1s ease;
+    transform-style: preserve-3d;
+}
+
+.carta{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #99CEA8;
+    position: absolute;
+    border-radius: 5px;
+    background-position: center;
+}
+
+.back{
+    background-color: #A7E9AF;
+    background-image: url('../imgs/back.png');
+    backface-visibility: hidden;
+    background-size: cover;
+}
+
+.front{
+    transform: rotateY(180deg);
+}
+
+.front img{
+    width: 100%;
+    background-size: cover;
+}

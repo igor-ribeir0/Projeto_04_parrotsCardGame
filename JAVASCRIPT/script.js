@@ -1,4 +1,6 @@
 let quantidadeCartas;
+let primeiraCarta = '';
+let segundaCarta = '';
 
 function qntdCartas(){
     do{
@@ -26,19 +28,61 @@ const cartas = [
 ];
 cartas.sort(comparador);
 
+function conferirCartas(){
+    const teste1 = primeiraCarta.classList.value;
+    const teste2 = segundaCarta.classList.value;
+
+    if(teste1 === teste2){
+        primeiraCarta = '';
+        segundaCarta = '';
+    }
+    else{
+        setTimeout(() => {
+            primeiraCarta.classList.remove('virarCarta');
+            segundaCarta.classList.remove('virarCarta');
+
+            primeiraCarta = '';
+            segundaCarta = '';
+        }, 1000);
+    }
+}
+
+function CartaVirar(escolhido){
+    if(escolhido.classList.contains('virarCarta')){
+        return;
+    }
+
+    if(primeiraCarta === ''){
+        escolhido.classList.add('virarCarta');
+        primeiraCarta = escolhido;
+    }
+    else if(segundaCarta === ''){
+        escolhido.classList.add('virarCarta');
+        segundaCarta = escolhido;
+
+        conferirCartas();
+    }
+}
+
 function contadorCartas(){
     let contador = 0;
+    let quantidade = 0;
     const item = document.querySelector('.containerCaixa');
-    const front = document.querySelector('.front');
 
-    while(contador < quantidadeCartas){
-        const elemento = ` <div class="caixaCarta">
+    while(quantidade < quantidadeCartas){
+        const elemento = ` <div onclick="CartaVirar(this)" class="${cartas[contador]} caixaCarta">
             <div class=" carta front"><img src="../gifs/${cartas[contador]}.gif"/></div>
             <div class=" carta back"></div>
         </div>`;
 
         item.innerHTML += elemento;
-        contador++;
+        quantidade++;
+        if(quantidade % 2 !== 0){
+            contador = contador;
+        }
+        else{
+            contador++;
+        }
     }
 }
 contadorCartas();

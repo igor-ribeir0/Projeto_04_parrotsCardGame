@@ -31,10 +31,10 @@
     border-radius: 5px;
     position: relative;
     margin: 20px;
+    cursor: pointer;
 }
 
-.caixaCarta:hover{
-    cursor: pointer;
+.virarCarta{
     transform: rotateY(180deg);
     transition: all 1s ease;
     transform-style: preserve-3d;
